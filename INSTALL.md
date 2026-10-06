@@ -18,10 +18,10 @@ docker run -d --pull=always --name chatgfd --restart unless-stopped \
   ghcr.io/shaohuiliu-github/aspect-chat:2.0.5
 ```
 
-3. 在浏览器打开 **[http://127.0.0.1:8517](http://127.0.0.1:8517)**。
-4. 点击左下角 **Settings（设置）**，填写你的 API 密钥并保存。然后在对话框输入你想建立的模型，发送即可。
+3. 等待约 10–30 秒，在浏览器打开 **[http://127.0.0.1:8517](http://127.0.0.1:8517)**。暂时打不开时，稍等后刷新。
+4. 点击左下角 **Settings（设置）**，选择 API 服务商（例如 DeepSeek），填写该服务商的 API 密钥并保存。然后在对话框下方选择模型，输入你想建立的模拟模型，发送即可。
 
-**不用下载本仓库，也不用单独安装 ASPECT、i2vis 或 Python。** 上面的命令也适用于 Linux；[Windows 安装步骤](INSTALL.md#windows)。
+**不用下载本仓库，也不用单独安装 ASPECT、i2vis 或 Python。** 上面的命令也适用于已安装并启动 Docker Engine 的 Linux；[Windows 安装步骤](INSTALL.md#windows)。
 
 ## 下次怎么打开
 
@@ -40,7 +40,7 @@ docker start chatgfd
 
 <a id="windows"></a>
 
-1. 安装并打开 Docker Desktop，使用 Linux 容器。
+1. 安装并打开 Docker Desktop，按安装提示启用 WSL 2，使用 Linux 容器。
 2. 在开始菜单搜索 **PowerShell**，打开后复制下面整段命令，按回车，等下载结束。
 
 ```powershell
@@ -49,8 +49,8 @@ New-Item -ItemType Directory -Force -Path $workspace | Out-Null
 docker run -d --pull=always --name chatgfd --restart unless-stopped -p 127.0.0.1:8517:8517 --mount "type=bind,source=$workspace,target=/workspace" -e "ASPECT_CHAT_HOST_WORKSPACE=$workspace" ghcr.io/shaohuiliu-github/aspect-chat:2.0.5
 ```
 
-3. 打开 **[http://127.0.0.1:8517](http://127.0.0.1:8517)**。
-4. 在 **Settings（设置）** 填写 API 密钥并保存，开始对话。
+3. 等待约 10–30 秒，打开 **[http://127.0.0.1:8517](http://127.0.0.1:8517)**。暂时打不开时，稍等后刷新。
+4. 在 **Settings（设置）** 选择 API 服务商，填写该服务商的 API 密钥并保存。在对话框下方选择模型，开始对话。
 
 下次只需打开 Docker Desktop，在 PowerShell 输入 `docker start chatgfd`，再打开同一个网址。
 
@@ -68,6 +68,7 @@ docker run -d --pull=always --name chatgfd --restart unless-stopped -p 127.0.0.1
 <details>
 <summary>安装时报名称重复或端口占用？</summary>
 
+- 网页暂时打不开：等 10–30 秒后刷新。如果一直打不开，在终端输入 `docker logs --tail 50 chatgfd` 查看启动信息。
 - 提示容器名称 `chatgfd` 已存在：说明之前已安装。输入 `docker start chatgfd`，再打开网页。
 - 提示端口 8517 已被占用：先关闭占用该端口的旧程序。已有 chatGFD 用户请用原来的启动方式和网址，避免重复安装。
 
@@ -103,10 +104,10 @@ docker run -d --pull=always --name chatgfd --restart unless-stopped \
   ghcr.io/shaohuiliu-github/aspect-chat:2.0.5
 ```
 
-3. Open **[http://127.0.0.1:8517](http://127.0.0.1:8517)** in your browser.
-4. Click **Settings** at the lower left, enter your API key, and save. Type the model you want in the chat box and send.
+3. Wait about 10–30 seconds, then open **[http://127.0.0.1:8517](http://127.0.0.1:8517)** in your browser. If it is not ready yet, wait briefly and refresh.
+4. Click **Settings** at the lower left, select your API provider (for example, DeepSeek), enter that provider's API key, and save. Choose a language model below the chat box, describe the simulation you want, and send.
 
-**No repository download or separate ASPECT, i2vis or Python installation is needed.** The commands also work on Linux. [Windows instructions](INSTALL.md#windows-english).
+**No repository download or separate ASPECT, i2vis or Python installation is needed.** The commands also work on Linux with Docker Engine installed and running. [Windows instructions](INSTALL.md#windows-english).
 
 ## Open it next time
 
@@ -125,7 +126,7 @@ Models and results are saved in **`chatgfd-workspace`** inside your home folder.
 
 <a id="windows-english"></a>
 
-1. Install and open Docker Desktop with Linux containers enabled.
+1. Install and open Docker Desktop, enable WSL 2 when prompted, and use Linux containers.
 2. Search for **PowerShell** in the Start menu. Open it, paste the entire block below, press Enter, and wait for the download to finish.
 
 ```powershell
@@ -134,8 +135,8 @@ New-Item -ItemType Directory -Force -Path $workspace | Out-Null
 docker run -d --pull=always --name chatgfd --restart unless-stopped -p 127.0.0.1:8517:8517 --mount "type=bind,source=$workspace,target=/workspace" -e "ASPECT_CHAT_HOST_WORKSPACE=$workspace" ghcr.io/shaohuiliu-github/aspect-chat:2.0.5
 ```
 
-3. Open **[http://127.0.0.1:8517](http://127.0.0.1:8517)**.
-4. Enter your API key in **Settings**, save, and start chatting.
+3. Wait about 10–30 seconds, then open **[http://127.0.0.1:8517](http://127.0.0.1:8517)**. If it is not ready yet, wait briefly and refresh.
+4. Select your API provider in **Settings**, enter that provider's API key, and save. Choose a language model below the chat box and start chatting.
 
 Next time, open Docker Desktop, enter `docker start chatgfd` in PowerShell, and open the same address.
 
@@ -153,6 +154,7 @@ Files stay in the launcher's own `workspace` folder. Use the same launcher step 
 <details>
 <summary>Name already exists or port is occupied?</summary>
 
+- Page not ready: wait 10–30 seconds and refresh. If it still does not open, run `docker logs --tail 50 chatgfd` in Terminal to see startup messages.
 - Container name `chatgfd` already exists: it is already installed. Run `docker start chatgfd` and open the browser address.
 - Port 8517 is occupied: close the old program using it. Existing chatGFD users should use their original launcher and address instead of installing again.
 

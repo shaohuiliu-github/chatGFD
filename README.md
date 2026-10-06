@@ -4,6 +4,8 @@
 
 Geophysical Fluid Dynamics Simulation · 地球流体动力学模拟
 
+由 **Shaohui Liu** 构思与开发，受益于 **Taras Gerya 教授** 的指导与讨论。
+
 [English](README-English.md) · [观看 4 分钟 Demo](https://youtu.be/BNjAN6mV1Xs) · [安装说明](INSTALL.md) · [下载与发布记录](https://github.com/shaohuiliu-github/chatGFD/releases/tag/v2.0.5)
 
 chatGFD 是一个早期 demo 产品，让地球科学想法更容易建模、教学和讨论。描述你的想法，用 **ASPECT 或 i2vis** 建立简单模型，检查输入参数和初始场，修改参数，再查看模型如何演化。
@@ -44,10 +46,10 @@ docker run -d --pull=always --name chatgfd --restart unless-stopped \
   ghcr.io/shaohuiliu-github/aspect-chat:2.0.5
 ```
 
-3. 在浏览器打开 **[http://127.0.0.1:8517](http://127.0.0.1:8517)**。
-4. 点击左下角 **Settings（设置）**，填写你的 API 密钥并保存。然后在对话框输入你想建立的模型，发送即可。
+3. 等待约 10–30 秒，在浏览器打开 **[http://127.0.0.1:8517](http://127.0.0.1:8517)**。暂时打不开时，稍等后刷新。
+4. 点击左下角 **Settings（设置）**，选择 API 服务商（例如 DeepSeek），填写该服务商的 API 密钥并保存。然后在对话框下方选择模型，输入你想建立的模拟模型，发送即可。
 
-**不用下载本仓库，也不用单独安装 ASPECT、i2vis 或 Python。** 上面的命令也适用于 Linux；[Windows 安装步骤](INSTALL.md#windows)。
+**不用下载本仓库，也不用单独安装 ASPECT、i2vis 或 Python。** 上面的命令也适用于已安装并启动 Docker Engine 的 Linux；[Windows 安装步骤](INSTALL.md#windows)。
 
 ## 下次怎么打开
 

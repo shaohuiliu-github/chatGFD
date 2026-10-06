@@ -4,6 +4,8 @@
 
 Geophysical Fluid Dynamics Simulation
 
+Conceived and developed by **Shaohui Liu**, with guidance from and discussions with **Professor Taras Gerya**.
+
 [中文](README.md) · [Watch the 4-minute demo](https://youtu.be/BNjAN6mV1Xs) · [Installation guide](INSTALL.md) · [Downloads and releases](https://github.com/shaohuiliu-github/chatGFD/releases/tag/v2.0.5)
 
 Make your Earth science ideas easier to model, teach and discuss. **chatGFD is an early demo product** for building and exploring simple geodynamic models through conversation, using **ASPECT and i2vis**. Describe an idea, inspect the inputs and initial fields, change a parameter, and see how the model evolves.
@@ -44,10 +46,10 @@ docker run -d --pull=always --name chatgfd --restart unless-stopped \
   ghcr.io/shaohuiliu-github/aspect-chat:2.0.5
 ```
 
-3. Open **[http://127.0.0.1:8517](http://127.0.0.1:8517)** in your browser.
-4. Click **Settings** at the lower left, enter your API key, and save. Type the model you want in the chat box and send.
+3. Wait about 10–30 seconds, then open **[http://127.0.0.1:8517](http://127.0.0.1:8517)** in your browser. If it is not ready yet, wait briefly and refresh.
+4. Click **Settings** at the lower left, select your API provider (for example, DeepSeek), enter that provider's API key, and save. Choose a language model below the chat box, describe the simulation you want, and send.
 
-**No repository download or separate ASPECT, i2vis or Python installation is needed.** The commands also work on Linux. [Windows instructions](INSTALL.md#windows-english).
+**No repository download or separate ASPECT, i2vis or Python installation is needed.** The commands also work on Linux with Docker Engine installed and running. [Windows instructions](INSTALL.md#windows-english).
 
 ## Open it next time
 
